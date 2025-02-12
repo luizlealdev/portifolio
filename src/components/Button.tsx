@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, {FC} from "react";
 
 interface ButtonProps {
     children: React.ReactNode;
@@ -8,14 +8,14 @@ interface ButtonProps {
 }
 
 const Button: FC<ButtonProps> = ({
-    children,
-    isLoading,
-    className,
-    onClick,
-}) => {
+                                     children,
+                                     isLoading,
+                                     className,
+                                     onClick,
+                                 }) => {
     return (
         <button
-            className={`py-3 px-5 bg-primary-green rounded-full font-inter font-medium ${className}`}
+            className={`py-3 px-5 bg-primary-green-light hover:bg-primary-green-dark transition-all duration-150 ease-in-out rounded-full font-inter font-medium ${className}`}
         >
             {children}
         </button>

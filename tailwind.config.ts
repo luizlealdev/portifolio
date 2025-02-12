@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type {Config} from "tailwindcss";
 
 export default {
     content: [
@@ -12,7 +12,10 @@ export default {
                 background: "var(--background)",
                 foreground: "var(--foreground)",
                 primary: {
-                    green: "var(--primary-green)",
+                    green: {
+                        light: "var(--primary-green-light)",
+                        dark: "var(--primary-green-dark)"
+                    },
                     blue: "var(--primary-blue)"
                 }
             },
