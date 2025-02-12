@@ -26,13 +26,13 @@ const Menu = () => {
     return (
         <>
             <header
-                className="fixed w-screen top-0 flex justify-between lg:justify-start items-center py-2 px-6 h-16 bg-background">
+                className="fixed w-screen top-0 flex justify-between lg:justify-start items-center py-2 px-6 h-16 bg-background z-10">
                 <a href="#">
                     <Image
                         src={AndroidIcon}
                         width={0}
                         height={0}
-                        className="w-auto h-auto px-2 py-3"
+                        className="w-10/12 px-2"
                         alt="Android Logo"
                     />
                 </a>
