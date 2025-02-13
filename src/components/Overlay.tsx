@@ -9,7 +9,7 @@ const Overlay = () => {
     return (<AnimatePresence>
         {isOpen && (
             <motion.div
-                className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10 pointer-events-none"
+                className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-10 pointer-events-none"
                 initial={{opacity: 0}}
                 animate={{opacity: 1}}
                 exit={{opacity: 0}}

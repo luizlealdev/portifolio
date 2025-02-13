@@ -39,7 +39,7 @@ const Menu = () => {
 
 
                 <nav className="flex items-center max-md:hidden lg:ml-auto">
-                    <ul className="flex md:gap-5 lg:gap-8">
+                    <ul className="flex md:gap-5 lg:gap-6">
                         <li>
                             <a href="#" className="hover:text-white p-2">
                                 Início
@@ -73,14 +73,14 @@ const Menu = () => {
 
 
                 <button
-                    className="lg:ml-14 max-md:hidden p-2 rounded-lg hover:bg-foreground transition-all ease-in-out duration-350 hover:text-white">
+                    className="lg:ml-14 max-md:hidden p-2 rounded-lg hover:bg-foreground-primary transition-all ease-in-out duration-350 hover:text-white">
                     <SunMedium/>
                     <span className="sr-only">Alterar tema</span>
                 </button>
 
 
                 <button
-                    className="md:hidden p-2 rounded-lg hover:bg-foreground transition-all ease-in-out duration-350 hover:text-white"
+                    className="md:hidden p-2 rounded-lg hover:bg-foreground-primary transition-all ease-in-out duration-350 hover:text-white"
                     onClick={() => toggleMenu()}>
                     <MenuIcon/>
                     <span className="sr-only">Abrir menu</span>
@@ -93,9 +93,9 @@ const Menu = () => {
                     <motion.div initial={{x: "100%"}} animate={{x: 0}}
                                 exit={{x: "100%"}}
                                 transition={{type: "tween", duration: 0.25, ease: "easeInOut"}}
-                                className="fixed top-0 right-0 h-screen w-9/12 bg-foreground p-4 z-50">
+                                className="fixed top-0 right-0 h-screen w-9/12 bg-background p-4 z-50">
                         <button
-                            className="p-2 rounded-lg hover:bg-foreground transition-all ease-in-out duration-350 hover:text-white"
+                            className="p-2 rounded-lg hover:bg-foreground-primary transition-all ease-in-out duration-350 hover:text-white"
                             onClick={() => toggleMenu()}>
                             <ChevronRight/>
                             <span className="sr-only">Fechar menu</span>
@@ -135,7 +135,7 @@ const Menu = () => {
                         </nav>
 
                         <button
-                            className="fixed bottom-4 right-4 p-2 rounded-lg hover:bg-foreground transition-all ease-in-out duration-350 hover:text-white">
+                            className="fixed bottom-4 right-4 p-2 rounded-lg hover:bg-foreground-primary transition-all ease-in-out duration-350 hover:text-white">
                             <SunMedium/>
                             <span className="sr-only">Alterar tema</span>
                         </button>
