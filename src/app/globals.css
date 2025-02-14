@@ -23,3 +23,15 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.skill-icon {
+  cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(13%) sepia(16%) saturate(5217%)
+  hue-rotate(186deg) brightness(95%) contrast(100%) opacity(50%);
+  transition: scale 0.2s ease;
+}
+.skill-icon:hover {
+  scale: 1.15;
+  transition: scale 0.2s ease;
+  filter: none;
+}

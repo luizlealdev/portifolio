@@ -1,0 +1,78 @@
+{
+  "mostUsed": [
+    {
+      "name": "Git",
+      "iconPath": "/skills-icons/git-icon.png"
+    },
+    {
+      "name": "Github",
+      "iconPath": "/skills-icons/github-icon.png"
+    },
+    {
+      "name": "Android Studio",
+      "iconPath": "/skills-icons/androidstudio-icon.png"
+    },
+    {
+      "name": "Kotlin",
+      "iconPath": "/skills-icons/kotlin-icon.png"
+    },
+    {
+      "name": "Java",
+      "iconPath": "/skills-icons/java-icon.png"
+    },
+    {
+      "name": "JavaScript",
+      "iconPath": "/skills-icons/javascript-icon.png"
+    },
+    {
+      "name": "Typescript",
+      "iconPath": "/skills-icons/typescript-icon.png"
+    },
+    {
+      "name": "NestJS",
+      "iconPath": "/skills-icons/nestjs-icon.png"
+    },
+    {
+      "name": "MySQL",
+      "iconPath": "/skills-icons/mysql-icon.png"
+    },
+    {
+      "name": "Firebase",
+      "iconPath": "/skills-icons/firebase-icon.png"
+    }
+  ],
+  "alreadyUsed": [
+    {
+      "name": "Gitlab",
+      "iconPath": "/skills-icons/gitlab-icon.png"
+    },
+    {
+      "name": "PHP",
+      "iconPath": "/skills-icons/php-icon.png"
+    },
+    {
+      "name": "Node.js",
+      "iconPath": "/skills-icons/nodejs-icon.png"
+    },
+    {
+      "name": "C#",
+      "iconPath": "/skills-icons/csharp-icon.png"
+    },
+    {
+      "name": "React",
+      "iconPath": "/skills-icons/react-icon.png"
+    },
+    {
+      "name": "PostgreSQL",
+      "iconPath": "/skills-icons/postgresql-icon.png"
+    },
+    {
+      "name": "SQLite",
+      "iconPath": "/skills-icons/sqlite-icon.png"
+    },
+    {
+      "name": "Docker",
+      "iconPath": "/skills-icons/docker-icon.png"
+    }
+  ]
+}

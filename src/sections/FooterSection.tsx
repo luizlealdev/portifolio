@@ -40,8 +40,8 @@ export default function FooterSection() {
                 <div className="h-px w-full bg-foreground-secondary"></div>
                 <div className="max-w-6xl mx-auto p-6">
                     <p className="">
-                        <span className="font-inter">&#169; </span>
-                        2025 - Luiz André Leal
+                        <span className="font-inter"> &#169; </span>
+                        Luiz André Leal · 2024
                     </p>
 
                 </div>
