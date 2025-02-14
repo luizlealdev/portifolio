@@ -8,6 +8,7 @@ import {useState} from "react";
 import {AnimatePresence} from "framer-motion";
 import {motion} from "framer-motion";
 import {useOverlay} from "@/contexts/OverlayContext";
+import {Tooltip} from "react-tooltip";
 
 const Menu = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -73,9 +74,20 @@ const Menu = () => {
 
 
                 <button
+                    data-tooltip-id="toggle-theme-tooltip" data-tooltip-content="Alterar tema"
                     className="lg:ml-14 max-md:hidden p-2 rounded-lg hover:bg-foreground-primary transition-all ease-in-out duration-350 hover:text-white">
                     <SunMedium/>
                     <span className="sr-only">Alterar tema</span>
+                    <Tooltip
+                        id="toggle-theme-tooltip"
+                        style={{
+                            backgroundColor: "var(--tooltip-bg)",
+                            color: "var(--tooltip-text-color)",
+                            padding: "5px 10px"
+                        }}
+                        delayShow={500}
+                        place="bottom-end"
+                    />
                 </button>
 
 

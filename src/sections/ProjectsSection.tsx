@@ -1,10 +1,13 @@
+"use client"
+
 import projects from '@/data/projects.json';
 import {Folder, SquareArrowOutUpRight} from "lucide-react";
 import {GithubIcon} from "@/assets/icons/GitHubIcon";
+import {Tooltip} from "react-tooltip";
 
 export default function ProjectsSection() {
     return (
-        <section className="max-w-6xl mx-auto px-6 pt-16 pb-10" id="#projects">
+        <section className="max-w-6xl mx-auto px-6 pt-16 pb-10" id="projects">
             <div className="mb-14 text-center">
                 <h3 className="text-4xl text-white font-inter font-bold">Projetos em destaque</h3>
                 <p className="mt-3">Alguns projetos pessoais e acadêmicos que fiz para praticar</p>
@@ -30,15 +33,34 @@ const ProjectCard = (project) => {
                 </span>
                 <div className="flex gap-3">
                     {data.githubUrl &&
-                        <a href={data.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <a
+                            data-tooltip-id="card-top-buttons-tooltip"
+                            data-tooltip-content="Acessar repositório"
+                            href={data.githubUrl} target="_blank" rel="noopener noreferrer">
                             <GithubIcon
                                 className="w-5 transition-all duration-200 ease-in-out fill-white/80 hover:fill-white hover:scale-110"/>
-                        </a>}
+                        </a>
+                    }
                     {data.previewUrl &&
-                        <a href={data.previewUrl} target="_blank" rel="noopener noreferrer">
+                        <a data-tooltip-id="card-top-buttons-tooltip"
+                           data-tooltip-content="Acessar projeto"
+                           href={data.previewUrl} target="_blank"
+                           rel="noopener noreferrer">
                             <SquareArrowOutUpRight strokeWidth={1.7}
                                                    className="w-5 transition-all duration-200 ease-in-out  hover:text-white hover:scale-110"/>
-                        </a>}
+                        </a>
+                    }
+
+                    <Tooltip
+                        id="card-top-buttons-tooltip"
+                        style={{
+                            backgroundColor: "var(--tooltip-bg)",
+                            color: "var(--tooltip-text-color)",
+                            padding: "5px 10px"
+                        }}
+                        delayShow={400}
+                        place="top"
+                    />
                 </div>
             </div>
             <div className="mt-4 space-y-1">

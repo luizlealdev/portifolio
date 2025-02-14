@@ -8,7 +8,12 @@
   --on-foreground: #06284A;
   --primary-green-light: #34A853;
   --primary-green-dark: #339e4f;
-  --primary-blue: #4285F4
+  --primary-blue: #4285F4;
+
+  --tooltip-bg: #071A2D;
+  --tooltip-text-color: #ffffff;
+
+  --rt-opacity: 1 !important;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,6 +21,9 @@
     --background: #061626;
     --foreground: #071A2D;
     --on-foreground: #06284A;
+
+    --tooltip-bg: #ffffff;
+    --tooltip-text-color: #071A2D;
   }
 }
 

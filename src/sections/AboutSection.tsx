@@ -15,7 +15,7 @@ export default function AboutSection() {
 
     return (
         <main
-            className="relative h-screen w-screen px-6 bg-cover bg-center bg-no-repeat flex items-center justify-center"
+            className="relative h-screen w-full px-6 bg-cover bg-center bg-no-repeat flex items-center justify-center"
             id="about"
             style={{
                 backgroundImage: `url(${windowWidth >= 768 ? AboutLargeBackground.src : AboutSmallBackground.src})`,
