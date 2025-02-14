@@ -33,7 +33,7 @@ const Input: FC<InputProps> = ({
                 required={required}
                 name={`input-${name}`}
                 id={`input-${name}`}
-                className="bg-[#06284A]/10 text-white border-2 border-[#06284A]/60 block w-full rounded-lg p-3 focus:border-primary-blue outline-none"
+                className="bg-[#06284A]/5 text-white border-2 border-[#06284A]/55 block w-full rounded-lg p-3 focus:border-primary-blue outline-none"
             />
         </div>
     );

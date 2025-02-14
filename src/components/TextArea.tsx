@@ -30,7 +30,7 @@ const TextArea: FC<TextAreaProps> = ({
                 required={required}
                 name={`textarea-${name}`}
                 id={`textarea-${name}`}
-                className="bg-[#06284A]/10 text-white border-2 border-[#06284A]/60 block w-full rounded-lg p-3 focus:border-primary-blue outline-none h-52 max-h-52"
+                className="bg-[#06284A]/5 text-white border-2 border-[#06284A]/55 block w-full rounded-lg p-3 focus:border-primary-blue outline-none h-52 max-h-52"
             />
         </div>
     );
