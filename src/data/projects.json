@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Markdown Editor",
+    "description": "Um editor Markdown nativo para Android que permite escrever, editar e visualizar código Markdown. Oferece suporte a pré-visualização integrada e compatibilidade com temas claros e escuros. Ideal para anotações, documentação e criação de conteúdos com estruturação eficiente.",
+    "previewUrl": null,
+    "githubUrl": "https://github.com/luizlealdev/markdown-editor",
+    "stack": [
+      "Kotlin",
+      "Room Database",
+      "MVVM"
+    ],
+    "type": "MOBILE"
+  },
+  {
+    "name": "Jogo do Glécio",
+    "description": "Projeto acadêmico desenvolvido para o professor de Matemática da Escola Profissional de Aracati. Consiste em um jogo interativo de tabuada com um sistema de placar, onde os estudantes podem competir entre si, tornando o aprendizado mais dinâmico e motivador.",
+    "previewUrl": "https://jogo-do-glécio.vercel.app",
+    "githubUrl": "https://github.com/mateus-f/jogo-do-glecio",
+    "stack": [
+      "React",
+      "Vite",
+      "Javascript",
+      "TailwindCSS"
+    ],
+    "type": "WEB"
+  },
+  {
+    "name": "API Jogo do Glécio",
+    "description": "Este projeto é o back-end da aplicação de anterior. Ele permite a gestão de usuários, incluindo criação, edição de informações e atribuição de permissões. Além disso, possibilita a inserção de dados no ranking, o envio de e-mails e outras funcionalidades.",
+    "previewUrl": "https://api-tabuada-do-glecio.vercel.app",
+    "githubUrl": "https://github.com/luizlealdev/jogo-do-glecio-api",
+    "stack": [
+      "NestJS",
+      "Typescript",
+      "Prisma",
+      "MySQL"
+    ],
+    "type": "WEB"
+  }
+]
