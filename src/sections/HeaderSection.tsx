@@ -1,5 +1,5 @@
 import Button from "@/components/Button";
-import {FileDown} from "lucide-react";
+import {Download} from "lucide-react";
 import Image from "next/image";
 import AndroidComponents from "@/assets/elements/android-architecture-components.svg";
 
@@ -17,8 +17,8 @@ export default function HeaderSection() {
                     descrição sei lá, agora vou colocar um lorem ipsun dolor
                     sit amed.
                 </article>
-                <Button className="flex gap-1">
-                    <FileDown strokeWidth={1.9} className="w-5"/>
+                <Button className="flex gap-2">
+                    <Download strokeWidth={1.9} className="w-5"/>
                     Baixar currículo
                 </Button>
             </div>

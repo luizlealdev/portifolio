@@ -8,7 +8,7 @@ import {Mail} from "lucide-react";
 
 export default function FooterSection() {
     return (
-        <footer>
+        <footer id="#contact">
             <Image src={FooterTopWave} alt="Wave" className="w-screen pointer-events-none select-none"/>
 
             <div className="bg-foreground-primary pt-6">

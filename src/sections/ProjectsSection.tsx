@@ -5,9 +5,12 @@ import {GithubIcon} from "@/assets/icons/GitHubIcon";
 export default function ProjectsSection() {
     return (
         <section className="max-w-6xl mx-auto px-6 pt-16 pb-10" id="#projects">
-            <h3 className="text-4xl text-white font-inter font-bold text-center mb-14">Projetos em destaque</h3>
+            <div className="mb-14 text-center">
+                <h3 className="text-4xl text-white font-inter font-bold">Projetos em destaque</h3>
+                <p className="mt-3">Alguns projetos pessoais e acadêmicos que fiz para praticar</p>
+            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center gap-6">
                 {projects.map((project, index) => (
                     <ProjectCard key={index} data={project}/>
                 ))}

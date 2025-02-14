@@ -22,7 +22,7 @@ export default function AboutSection() {
             }}
         >
             <div className="max-w-6xl mx-auto flex flex-col gap-8 md:flex-row md:gap-10 lg:gap-16 items-center md:justify-center">
-                <Image src={LuizLealsImage} alt="Imagem de Luiz Leal" className="w-72 md:w-80"/>
+                <Image src={LuizLealsImage} alt="Imagem de Luiz Leal" className="w-72 md:w-80 drop-shadow-sm"/>
                 <article className="space-y-2 md:w-1/2 md:space-y-3 bg-foreground-primary">
                     <h3 className="text-4xl text-white font-inter font-bold">Sobre mim</h3>
                     <p> Me chamo Luiz André Leal, tenho 18 anos, sou
