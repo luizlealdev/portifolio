@@ -2,77 +2,145 @@
   "mostUsed": [
     {
       "name": "Git",
-      "iconPath": "/skills-icons/git-icon.png"
+      "iconPath": {
+        "normal": "/skills-icons/git-icon.png",
+        "dark": null
+      }
     },
     {
       "name": "Github",
-      "iconPath": "/skills-icons/github-icon.png"
+      "iconPath": {
+        "normal": "/skills-icons/github-icon.png",
+        "dark": "/skills-icons/github-icon-dark.png"
+      }
     },
     {
       "name": "Android Studio",
-      "iconPath": "/skills-icons/androidstudio-icon.png"
+      "iconPath": {
+        "normal": "/skills-icons/androidstudio-icon.png",
+        "dark": null
+      }
     },
     {
       "name": "Kotlin",
-      "iconPath": "/skills-icons/kotlin-icon.png"
+      "iconPath": {
+        "normal": "/skills-icons/kotlin-icon.png",
+        "dark": null
+      }
     },
     {
       "name": "Java",
-      "iconPath": "/skills-icons/java-icon.png"
+      "iconPath": {
+        "normal": "/skills-icons/java-icon.png",
+        "dark": null
+      }
     },
     {
       "name": "JavaScript",
-      "iconPath": "/skills-icons/javascript-icon.png"
+      "iconPath": {
+        "normal": "/skills-icons/javascript-icon.png",
+        "dark": null
+      }
     },
     {
       "name": "Typescript",
-      "iconPath": "/skills-icons/typescript-icon.png"
+      "iconPath": {
+        "normal": "/skills-icons/typescript-icon.png",
+        "dark": null
+      }
     },
     {
       "name": "NestJS",
-      "iconPath": "/skills-icons/nestjs-icon.png"
+      "iconPath": {
+        "normal": "/skills-icons/nestjs-icon.png",
+        "dark": null
+      }
+    },
+    {
+      "name": "Vite",
+      "iconPath": {
+        "normal": "/skills-icons/vite-icon.png",
+        "dark": null
+      }
     },
     {
       "name": "MySQL",
-      "iconPath": "/skills-icons/mysql-icon.png"
+      "iconPath": {
+        "normal": "/skills-icons/mysql-icon.png",
+        "dark": null
+      }
     },
     {
-      "name": "Firebase",
-      "iconPath": "/skills-icons/firebase-icon.png"
+      "name": "PostgreSQL",
+      "iconPath": {
+        "normal": "/skills-icons/postgresql-icon.png",
+        "dark": null
+      }
     }
   ],
   "alreadyUsed": [
     {
       "name": "Gitlab",
-      "iconPath": "/skills-icons/gitlab-icon.png"
+      "iconPath": {
+        "normal": "/skills-icons/gitlab-icon.png",
+        "dark": null
+      }
     },
     {
       "name": "PHP",
-      "iconPath": "/skills-icons/php-icon.png"
+      "iconPath": {
+        "normal": "/skills-icons/php-icon.png",
+        "dark": null
+      }
     },
     {
       "name": "Node.js",
-      "iconPath": "/skills-icons/nodejs-icon.png"
+      "iconPath": {
+        "normal": "/skills-icons/nodejs-icon.png",
+        "dark": null
+      }
     },
     {
       "name": "C#",
-      "iconPath": "/skills-icons/csharp-icon.png"
+      "iconPath": {
+        "normal": "/skills-icons/csharp-icon.png",
+        "dark": null
+      }
     },
     {
       "name": "React",
-      "iconPath": "/skills-icons/react-icon.png"
+      "iconPath": {
+        "normal": "/skills-icons/react-icon.png",
+        "dark": null
+      }
     },
     {
-      "name": "PostgreSQL",
-      "iconPath": "/skills-icons/postgresql-icon.png"
+      "name": "NextJS",
+      "iconPath": {
+        "normal": "/skills-icons/nextjs-icon.png",
+        "dark": "/skills-icons/nextjs-icon-dark.png"
+      }
+    },
+    {
+      "name": "Firebase",
+      "iconPath": {
+        "normal": "/skills-icons/firebase-icon.png",
+        "dark": null
+      }
     },
     {
       "name": "SQLite",
-      "iconPath": "/skills-icons/sqlite-icon.png"
+      "iconPath": {
+        "normal": "/skills-icons/sqlite-icon.png",
+        "dark": null
+      }
     },
     {
       "name": "Docker",
-      "iconPath": "/skills-icons/docker-icon.png"
+      "iconPath": {
+        "normal": "/skills-icons/docker-icon.png",
+        "dark": null
+      }
     }
   ]
 }

@@ -5,8 +5,18 @@ import skills from "@/data/skills.json"
 import {Tooltip} from "react-tooltip";
 import {motion} from "framer-motion";
 import {fadeInUp, scaleIn, staggerChildren} from "@/animations/scrollAnimations";
+import {useEffect, useState} from "react";
 
 export default function SkillsSection() {
+    const [theme, setTheme] = useState("light");
+
+    useEffect(() => {
+        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDarkMode) {
+            setTheme('dark');
+        }
+    }, [])
+
     return (
         <section className="max-w-6xl mx-auto px-6 text-center pt-16 pb-10" id="skills">
             <motion.h3
@@ -26,9 +36,14 @@ export default function SkillsSection() {
                                 key={index}
                                 {...scaleIn(index * 0.1, 0.8)}
                             >
-                                <Image data-tooltip-id={`skill-${skill.name}-tooltip`} data-tooltip-content={skill.name}
+                                <Image data-tooltip-id={`skill-${skill.name}-tooltip`}
+                                       data-tooltip-content={skill.name}
                                        width={64}
-                                       height={0} src={skill.iconPath} alt={`Icone do ${skill.name}`}
+                                       height={0}
+                                       src={
+                                           skill.iconPath.dark && theme === "dark" ? skill.iconPath.dark : skill.iconPath.normal
+                                       }
+                                       alt={`Icone do ${skill.name}`}
                                        className="w-16 md:w-20 h-auto skill-icon"/>
 
                                 <Tooltip
@@ -60,9 +75,14 @@ export default function SkillsSection() {
                             <motion.li
                                 key={index}
                                 {...scaleIn(index * 0.1, 0.8)}>
-                                <Image data-tooltip-id={`skill-${skill.name}-tooltip`} data-tooltip-content={skill.name}
+                                <Image data-tooltip-id={`skill-${skill.name}-tooltip`}
+                                       data-tooltip-content={skill.name}
                                        width={64}
-                                       height={0} src={skill.iconPath} alt={`Icone do ${skill.name}`}
+                                       height={64}
+                                       src={
+                                           skill.iconPath.dark && theme === "dark" ? skill.iconPath.dark : skill.iconPath.normal
+                                       }
+                                       alt={`Icone do ${skill.name}`}
                                        className="w-16 md:w-20 h-auto skill-icon"/>
 
                                 <Tooltip
@@ -79,6 +99,7 @@ export default function SkillsSection() {
                                     noArrow={true}
                                 />
                             </motion.li>
+
                         ))}
                     </motion.ul>
                 </div>
