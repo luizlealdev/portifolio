@@ -4,32 +4,37 @@ import projects from '@/data/projects.json';
 import {Folder, SquareArrowOutUpRight} from "lucide-react";
 import {GithubIcon} from "@/assets/icons/GitHubIcon";
 import {Tooltip} from "react-tooltip";
+import {motion} from "framer-motion";
+import {fadeInUp} from "@/animations/scrollAnimations";
 
 export default function ProjectsSection() {
     return (
         <section className="max-w-6xl mx-auto px-6 pt-16 pb-10" id="projects">
-            <div className="mb-14 text-center">
-                <h3 className="text-4xl text-white font-inter font-bold">Projetos em destaque</h3>
+            <motion.div
+                {...fadeInUp(20, 0, 1, "all")}
+                className="mb-14 text-center">
+                <h3
+                    className="text-4xl text-white font-inter font-bold">Projetos em destaque
+                </h3>
                 <p className="mt-3">Alguns projetos pessoais e acadêmicos que fiz para praticar</p>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center gap-6">
                 {projects.map((project, index) => (
-                    <ProjectCard key={index} data={project}/>
+                    <ProjectCard key={index} data={project} index={index}/>
                 ))}
             </div>
         </section>)
 }
 
-const ProjectCard = (project) => {
-    const data = project.data;
-
+const ProjectCard = ({data, index}) => {
     return (
-        <article
-            className="bg-foreground-primary p-6 shadow-md rounded-lg transition-all duration-300 transform hover:-translate-y-2">
+        <motion.article
+            {...fadeInUp(50, index * 0.2, 1, "some")}
+            className="bg-foreground-primary p-6 shadow-md rounded-lg">
             <div className="flex justify-between">
                 <span className="flex gap-1">
-                <Folder strokeWidth={1.6} className="w-5 text-white"/>/{data.type.toLowerCase()}
+                    <Folder strokeWidth={1.6} className="w-5 text-white"/>/{data.type.toLowerCase()}
                 </span>
                 <div className="flex gap-3">
                     {data.githubUrl &&
@@ -72,5 +77,5 @@ const ProjectCard = (project) => {
                     <span className="py-1 px-3 bg-[#4285F4]/10 rounded-full" key={index}>{stack}</span>
                 ))}
             </div>
-        </article>)
+        </motion.article>)
 }

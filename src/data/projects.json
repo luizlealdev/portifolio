@@ -13,7 +13,7 @@
   },
   {
     "name": "Jogo do Glécio",
-    "description": "Projeto acadêmico desenvolvido para o professor de Matemática da Escola Profissional de Aracati. Consiste em um jogo interativo de tabuada com um sistema de placar, onde os estudantes podem competir entre si, tornando o aprendizado mais dinâmico e motivador.",
+    "description": "Projeto acadêmico desenvolvido para o professor de Matemática da Escola Profissional de Aracati. Consiste em um jogo interativo de tabuada com um sistema de placar, onde os estudantes podem competir entre si, tornando o aprendizado mais dinâmico e divertido.",
     "previewUrl": "https://jogo-do-glécio.vercel.app",
     "githubUrl": "https://github.com/mateus-f/jogo-do-glecio",
     "stack": [

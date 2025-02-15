@@ -3,20 +3,31 @@
 import Image from "next/image";
 import skills from "@/data/skills.json"
 import {Tooltip} from "react-tooltip";
+import {motion} from "framer-motion";
+import {fadeInUp, scaleIn, staggerChildren} from "@/animations/scrollAnimations";
 
 export default function SkillsSection() {
-
     return (
         <section className="max-w-6xl mx-auto px-6 text-center pt-16 pb-10" id="skills">
-            <h3 className="text-4xl text-white font-inter font-bold mb-14">Tecnologias utilizadas</h3>
+            <motion.h3
+                {...fadeInUp(20, 0, 1, "all")}
+                className="text-4xl text-white font-inter font-bold mb-14">Tecnologias utilizadas
+            </motion.h3>
 
             <div className="space-y-12">
                 <div>
-                    <p className="mb-4">Techs que uso no meu dia a dia</p>
-                    <ul className="flex gap-3 flex-wrap justify-center">
+                    <motion.p
+                        {...fadeInUp(20, 0, 1.2, "all")}
+                        className="mb-4">Techs que uso no meu dia a dia
+                    </motion.p>
+                    <motion.ul {...staggerChildren(0, 0.8, 0.1)} className="flex gap-3 flex-wrap justify-center">
                         {skills.mostUsed.map((skill, index) => (
-                            <li key={index}>
-                                <Image data-tooltip-id={`skill-${skill.name}-tooltip`} data-tooltip-content={skill.name} width={64}
+                            <motion.li
+                                key={index}
+                                {...scaleIn(index * 0.1, 0.8)}
+                            >
+                                <Image data-tooltip-id={`skill-${skill.name}-tooltip`} data-tooltip-content={skill.name}
+                                       width={64}
                                        height={0} src={skill.iconPath} alt={`Icone do ${skill.name}`}
                                        className="w-16 md:w-20 h-auto skill-icon"/>
 
@@ -33,17 +44,24 @@ export default function SkillsSection() {
                                     place="bottom"
                                     noArrow={true}
                                 />
-                            </li>
+                            </motion.li>
                         ))}
-                    </ul>
+                    </motion.ul>
                 </div>
 
                 <div>
-                    <p className="mb-4">Outras techs que já utilizei</p>
-                    <ul className="flex gap-3 flex-wrap justify-center">
+                    <motion.p
+                        {...fadeInUp(20, 0, 1.2, "all")}
+                        className="mb-4">
+                        Outras techs que já utilizei
+                    </motion.p>
+                    <motion.ul {...staggerChildren(0, 0.8, 0.1)} className="flex gap-3 flex-wrap justify-center">
                         {skills.alreadyUsed.map((skill, index) => (
-                            <li key={index}>
-                                <Image data-tooltip-id={`skill-${skill.name}-tooltip`} data-tooltip-content={skill.name} width={64}
+                            <motion.li
+                                key={index}
+                                {...scaleIn(index * 0.1, 0.8)}>
+                                <Image data-tooltip-id={`skill-${skill.name}-tooltip`} data-tooltip-content={skill.name}
+                                       width={64}
                                        height={0} src={skill.iconPath} alt={`Icone do ${skill.name}`}
                                        className="w-16 md:w-20 h-auto skill-icon"/>
 
@@ -60,9 +78,9 @@ export default function SkillsSection() {
                                     place="bottom"
                                     noArrow={true}
                                 />
-                            </li>
+                            </motion.li>
                         ))}
-                    </ul>
+                    </motion.ul>
                 </div>
             </div>
         </section>)
