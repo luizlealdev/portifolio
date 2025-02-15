@@ -1,6 +1,6 @@
 "use client"
 
-import {createContext, useContext, useState} from "react";
+import {createContext, useContext} from "react";
 
 interface OverlayContextType {
     isOpen: boolean;
@@ -8,16 +8,7 @@ interface OverlayContextType {
     hideOverlay: () => void;
 }
 
-const OverlayContext = createContext<OverlayContextType | undefined>(undefined);
-
-export function OverlayProvider({children}: { children: React.ReactNode }) {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const showOverlay = () => setIsOpen(true);
-    const hideOverlay = () => setIsOpen(false);
-
-    return (<OverlayContext.Provider value={{isOpen, showOverlay, hideOverlay}}>{children}</OverlayContext.Provider>)
-}
+export const OverlayContext = createContext<OverlayContextType | undefined>(undefined);
 
 export function useOverlay() {
     const context = useContext(OverlayContext);

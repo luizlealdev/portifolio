@@ -2,7 +2,8 @@ import type {Metadata} from "next";
 import {Inter, JetBrains_Mono} from "next/font/google";
 import "./globals.css";
 import Overlay from "@/components/Overlay";
-import {OverlayProvider} from "@/contexts/OverlayContext";
+import {OverlayProvider} from "@/providers/OverlayProvider";
+import {ThemeModeProvider} from "@/providers/ThemeModeProvider";
 
 const jetBrainsMono = JetBrains_Mono({
     variable: "--font-jetbrains-mono",
@@ -26,15 +27,17 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="pt-br">
+        <html lang="pt-br" suppressHydrationWarning={true}>
         <body
             className={`${jetBrainsMono.variable} ${inter.variable} antialiased text-white/80 font-jetbrains`}
         >
 
-        <OverlayProvider>
-            {children}
-            <Overlay/>
-        </OverlayProvider>
+        <ThemeModeProvider>
+            <OverlayProvider>
+                {children}
+                <Overlay/>
+            </OverlayProvider>
+        </ThemeModeProvider>
         </body>
         </html>
     );

@@ -1,17 +1,21 @@
 "use client"
 
 import Image from "next/image";
-
-import AndroidIcon from "@/assets/elements/android-logo.svg";
-import {ChevronRight, MenuIcon, SunMedium} from "lucide-react";
-import {useState} from "react";
+import {ChevronRight, MenuIcon, Moon, SunMedium} from "lucide-react";
+import {useEffect, useState} from "react";
 import {AnimatePresence} from "framer-motion";
 import {motion} from "framer-motion";
 import {useOverlay} from "@/contexts/OverlayContext";
 import {Tooltip} from "react-tooltip";
+import {useTheme} from "next-themes";
+
+import AndroidIcon from "@/assets/elements/android-logo.svg";
 
 const Menu = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
+
+    const {setTheme, resolvedTheme} = useTheme();
     const {showOverlay, hideOverlay} = useOverlay()
 
     const toggleMenu = () => {
@@ -23,6 +27,14 @@ const Menu = () => {
 
         setIsMenuOpen(!isMenuOpen);
     }
+
+    const toggleTheme = () => {
+        setTheme(resolvedTheme === "dark" ? "light" : "dark");
+    }
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
 
     return (
         <>
@@ -74,9 +86,13 @@ const Menu = () => {
 
 
                 <button
-                    data-tooltip-id="toggle-theme-tooltip" data-tooltip-content="Alterar tema"
+                    data-tooltip-id="toggle-theme-tooltip"
+                    data-tooltip-content="Alterar tema"
+                    onClick={() => toggleTheme()}
                     className="lg:ml-14 max-md:hidden p-2 rounded-lg hover:bg-foreground-primary transition-all ease-in-out duration-350 hover:text-white">
-                    <SunMedium/>
+                    {
+                        resolvedTheme === 'dark' ? <SunMedium strokeWidth={1.7}/> : <Moon strokeWidth={1.5}/>
+                    }
                     <span className="sr-only">Alterar tema</span>
                     <Tooltip
                         id="toggle-theme-tooltip"
@@ -147,8 +163,11 @@ const Menu = () => {
                         </nav>
 
                         <button
+                            onClick={() => toggleTheme()}
                             className="fixed bottom-4 right-4 p-2 rounded-lg hover:bg-foreground-primary transition-all ease-in-out duration-350 hover:text-white">
-                            <SunMedium/>
+                            {
+                                resolvedTheme === 'dark' ? <SunMedium strokeWidth={1.7}/> : <Moon strokeWidth={1.5}/>
+                            }
                             <span className="sr-only">Alterar tema</span>
                         </button>
                     </motion.div>
