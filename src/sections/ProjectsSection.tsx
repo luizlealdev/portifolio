@@ -9,7 +9,7 @@ import {fadeInUp} from "@/animations/scrollAnimations";
 
 export default function ProjectsSection() {
     return (
-        <section className="max-w-6xl mx-auto px-6 pt-16 pb-10" id="projects">
+        <section className="max-w-6xl mx-auto px-6 pt-16 pb-10 scroll-m-10" id="projects">
             <motion.div
                 {...fadeInUp(20, 0, 1, "all")}
                 className="mb-14 text-center">

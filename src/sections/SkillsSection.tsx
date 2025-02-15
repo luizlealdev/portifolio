@@ -18,7 +18,7 @@ export default function SkillsSection() {
     }, [])
 
     return (
-        <section className="max-w-6xl mx-auto px-6 text-center pt-16 pb-10" id="skills">
+        <section className="max-w-6xl mx-auto px-6 text-center pt-16 pb-10 scroll-m-12" id="skills">
             <motion.h3
                 {...fadeInUp(20, 0, 1, "all")}
                 className="text-4xl text-white font-inter font-bold mb-14">Tecnologias utilizadas
