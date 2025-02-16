@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image";
-import FooterTopWave from "@/assets/elements/footer_top_wave.svg";
 import Input from "@/components/Input";
 import TextArea from "@/components/TextArea";
 import Button from "@/components/Button";
@@ -10,17 +9,18 @@ import {Mail} from "lucide-react";
 import {Tooltip} from "react-tooltip";
 import {motion} from "framer-motion";
 import {fadeInLeft, fadeInRight} from "@/animations/scrollAnimations";
+import TopWave from "@/assets/elements/TopWave";
 
 export default function FooterSection() {
     return (
         <footer>
-            <Image src={FooterTopWave} alt="Wave" className="w-screen pointer-events-none select-none"/>
+            <TopWave className="fill-foreground-primary pointer-events-none select-none"/>
 
             <div className="bg-foreground-primary pt-6">
                 <div
                     className="max-w-6xl mx-auto px-6 pb-10 flex flex-col-reverse md:flex-1 md:flex-row items-center justify-center md:gap-8 xl:gap-44 scroll-p-80" id="contact">
                     <motion.form {...fadeInLeft(20, 0.3, 1)} className="w-full md:w-2/3 lg:w-1/2 xl:w-2/5">
-                        <h3 className="text-4xl text-white font-inter font-bold mb-6">Entre em contato
+                        <h3 className="text-4xl text-font-primary font-inter font-bold mb-6">Entre em contato
                             comigo</h3>
                         <div className="space-y-4">
                             <Input label="Nome" placeholder="John Doe" name="name"/>
@@ -36,7 +36,7 @@ export default function FooterSection() {
                                alt="Imagem de envelopes que representam um e-mail com o tema, cores, e o icone do android."
                                className="w-auto"/>
                         <a data-tooltip-id="open-email-tooltip" data-tooltip-content="Enviar e-mail" href="mailto:contato@luizleal.dev" target="_blank"
-                           className="hidden md:flex gap-2 hover:text-white">
+                           className="hidden md:flex gap-2 transition-all duration-200 hover:text-primary-blue dark:hover:text-font-primary">
                             <Mail strokeWidth={1.5} className="w-5"/>
                             contato@luizleal.dev
                         </a>
@@ -46,9 +46,10 @@ export default function FooterSection() {
                             style={{
                                 backgroundColor: "var(--tooltip-bg)",
                                 color: "var(--tooltip-text-color)",
-                                padding: "5px 10px"
+                                padding: "5px 10px",
+                                borderRadius: "6px"
                             }}
-                            delayShow={300}
+                            delayShow={500}
                             place="bottom"
                         />
                     </motion.div>

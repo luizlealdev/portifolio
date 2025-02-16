@@ -3,49 +3,58 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+    html {
+        scroll-behavior: smooth;
+    }
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --on-foreground: #06284A;
-  --primary-green-light: #34A853;
-  --primary-green-dark: #339e4f;
-  --primary-blue: #4285F4;
+    --background: #ffffff;
+    --foreground: #f5f8ff;
+    --on-foreground: #dbe2fb;
 
-  --tooltip-bg: #071A2D;
-  --tooltip-text-color: #ffffff;
+    --text-color: #102d48;
+    --text-title: #061626;
 
-  --rt-opacity: 1 !important;
+    --primary-green-light: #34A853;
+    --primary-green-dark: #339e4f;
+    --primary-blue: #4285F4;
+
+    --tooltip-bg: #06284A;
+    --tooltip-text-color: #ffffff;
+
+    --rt-opacity: 1 !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+.dark {
     --background: #061626;
     --foreground: #071A2D;
     --on-foreground: #06284A;
 
+    --text-color: rgba(255, 255, 255, 0.8);
+    --text-title: #ffffff;
+
     --tooltip-bg: #ffffff;
     --tooltip-text-color: #071A2D;
-  }
 }
 
 body {
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .skill-icon {
-  cursor: pointer;
-  filter: brightness(0) saturate(100%) invert(13%) sepia(16%) saturate(5217%)
-  hue-rotate(186deg) brightness(95%) contrast(100%) opacity(50%);
-  transition: scale 0.2s ease;
+    cursor: pointer;
+    transition: scale 0.2s ease;
+    filter: brightness(0) saturate(100%) invert(86%) sepia(7%) saturate(353%) hue-rotate(195deg) brightness(108%) contrast(105%);
 }
-.skill-icon:hover {
-  scale: 1.15;
-  transition: scale 0.2s ease;
-  filter: none;
+
+.dark .skill-icon {
+    filter: brightness(0) saturate(100%) invert(13%) sepia(16%) saturate(5217%) hue-rotate(186deg) brightness(95%) contrast(100%) opacity(50%);
+}
+
+.skill-icon:is(:hover, :focus, :active) {
+    scale: 1.15;
+    transition: scale 0.2s ease;
+    filter: none;
 }

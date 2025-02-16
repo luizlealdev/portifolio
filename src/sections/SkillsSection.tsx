@@ -1,27 +1,21 @@
 "use client"
 
 import Image from "next/image";
-import skills from "@/data/skills.json"
+import skills from "@/data/skills.json";
 import {Tooltip} from "react-tooltip";
 import {motion} from "framer-motion";
 import {fadeInUp, scaleIn, staggerChildren} from "@/animations/scrollAnimations";
-import {useEffect, useState} from "react";
+import {useTheme} from "next-themes";
 
 export default function SkillsSection() {
-    const [theme, setTheme] = useState("light");
-
-    useEffect(() => {
-        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (prefersDarkMode) {
-            setTheme('dark');
-        }
-    }, [])
+    const {resolvedTheme} = useTheme();
 
     return (
         <section className="max-w-6xl mx-auto px-6 text-center pt-16 pb-10 scroll-m-12" id="skills">
             <motion.h3
                 {...fadeInUp(20, 0, 1, "all")}
-                className="text-4xl text-white font-inter font-bold mb-14">Tecnologias utilizadas
+                className="text-4xl text-font-primary font-inter font-bold mb-14">
+                Tecnologias utilizadas
             </motion.h3>
 
             <div className="space-y-12">
@@ -41,10 +35,10 @@ export default function SkillsSection() {
                                        width={64}
                                        height={0}
                                        src={
-                                           skill.iconPath.dark && theme === "dark" ? skill.iconPath.dark : skill.iconPath.normal
+                                           skill.iconPath.dark && resolvedTheme === "dark" ? skill.iconPath.dark : skill.iconPath.normal
                                        }
                                        alt={`Icone do ${skill.name}`}
-                                       className="w-16 md:w-20 h-auto skill-icon"/>
+                                       className="w-16 md:w-20 h-auto skill-icon drop-shadow-2xl"/>
 
                                 <Tooltip
                                     id={`skill-${skill.name}-tooltip`}
@@ -53,6 +47,7 @@ export default function SkillsSection() {
                                         color: "var(--tooltip-text-color)",
                                         padding: "5px 10px",
                                         opacity: 1,
+                                        borderRadius: "6px",
                                         backdropFilter: "none",
                                         zIndex: 9999
                                     }}
@@ -80,7 +75,7 @@ export default function SkillsSection() {
                                        width={64}
                                        height={64}
                                        src={
-                                           skill.iconPath.dark && theme === "dark" ? skill.iconPath.dark : skill.iconPath.normal
+                                           skill.iconPath.dark && resolvedTheme === "dark" ? skill.iconPath.dark : skill.iconPath.normal
                                        }
                                        alt={`Icone do ${skill.name}`}
                                        className="w-16 md:w-20 h-auto skill-icon"/>
@@ -92,6 +87,7 @@ export default function SkillsSection() {
                                         color: "var(--tooltip-text-color)",
                                         padding: "5px 10px",
                                         opacity: 1,
+                                        borderRadius: "6px",
                                         backdropFilter: "none",
                                         zIndex: 9999
                                     }}
@@ -99,10 +95,10 @@ export default function SkillsSection() {
                                     noArrow={true}
                                 />
                             </motion.li>
-
                         ))}
                     </motion.ul>
                 </div>
             </div>
-        </section>)
+        </section>
+    );
 }

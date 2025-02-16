@@ -22,6 +22,10 @@ export default {
                         dark: "var(--primary-green-dark)"
                     },
                     blue: "var(--primary-blue)"
+                },
+                font: {
+                    color: "var(--text-color)",
+                    primary: "var(--text-title)"
                 }
             },
             fontFamily: {

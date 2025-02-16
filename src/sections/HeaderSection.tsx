@@ -16,7 +16,7 @@ export default function HeaderSection() {
                 <p className="text-primary-green-light h-5">
                     <Typewriter words={["Olá, me chamo"]} loop={true} cursor={true}/>
                 </p>
-                <h3 className="font-inter font-bold text-white text-6xl md:text-5xl lg:text-7xl">
+                <h3 className="font-inter font-bold text-font-primary text-6xl lg:text-7xl">
                     Luiz Leal
                 </h3>
                 <article>
@@ -35,7 +35,7 @@ export default function HeaderSection() {
                         src={AndroidComponents}
                         alt="Imagem de um laptop com a logo e as cores do android."
                         layout="responsive"
-                        className="w-full h-auto"
+                        className="w-full h-auto drop-shadow-sm"
                     />
                 </div>
             </motion.div>

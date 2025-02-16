@@ -29,7 +29,7 @@ export default function RootLayout({
     return (
         <html lang="pt-br" suppressHydrationWarning={true}>
         <body
-            className={`${jetBrainsMono.variable} ${inter.variable} antialiased text-white/80 font-jetbrains`}
+            className={`${jetBrainsMono.variable} ${inter.variable} text-font-color antialiased font-jetbrains`}
         >
 
         <ThemeModeProvider>

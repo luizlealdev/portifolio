@@ -15,7 +15,7 @@ const Button: FC<ButtonProps> = ({
                                  }) => {
     return (
         <button
-            className={`py-3 px-6 bg-primary-green-light hover:bg-primary-green-dark text-white transition-all duration-150 ease-in-out rounded-full font-inter font-medium ${className}`}
+            className={`py-3 px-6 bg-primary-green-light hover:bg-primary-green-dark focus:bg-primary-green-dark text-white transition-all duration-150 ease-in-out rounded-full font-inter font-medium ${className}`}
         >
             {children}
         </button>
