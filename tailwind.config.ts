@@ -32,6 +32,10 @@ export default {
                 inter: "var(--font-inter), sans-serif",
                 jetbrains: "var(--font-jetbrains-mono), monospace",
             },
+            animation: {
+                "moving": "moving 2s infinite alternate",
+                "gelatine": "gelatine 0.5s ease-in-out",
+            }
         },
     },
     plugins: [],

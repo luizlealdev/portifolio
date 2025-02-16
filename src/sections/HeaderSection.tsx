@@ -35,7 +35,7 @@ export default function HeaderSection() {
                         src={AndroidComponents}
                         alt="Imagem de um laptop com a logo e as cores do android."
                         layout="responsive"
-                        className="w-full h-auto drop-shadow-sm"
+                        className="w-full h-auto drop-shadow-sm animate-moving"
                     />
                 </div>
             </motion.div>

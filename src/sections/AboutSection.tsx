@@ -42,7 +42,7 @@ export default function AboutSection() {
                 className="max-w-6xl mx-auto flex flex-col gap-8 md:flex-row md:gap-10 lg:gap-16 items-center md:justify-center">
                 <motion.div
                     {...fadeInLeft(20, 0, 1)}>
-                    <Image src={LuizLealsImage} alt="Imagem de Luiz Leal" className="w-72 md:w-80 drop-shadow-sm"/>
+                    <Image src={LuizLealsImage} alt="Imagem de Luiz Leal" className="w-72 md:w-80 drop-shadow-sm animate-moving"/>
                 </motion.div>
                 <motion.article
                     {...fadeInLeft(20, 0.2, 1)}

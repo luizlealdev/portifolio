@@ -46,7 +46,7 @@ body {
 .skill-icon {
     cursor: pointer;
     transition: scale 0.2s ease;
-    filter: brightness(0) saturate(100%) invert(86%) sepia(7%) saturate(353%) hue-rotate(195deg) brightness(108%) contrast(105%);
+    filter: brightness(0) saturate(100%) invert(86%) sepia(19%) saturate(180%) hue-rotate(186deg) brightness(107%) contrast(99%);
 }
 
 .dark .skill-icon {

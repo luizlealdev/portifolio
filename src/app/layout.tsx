@@ -1,9 +1,11 @@
 import type {Metadata} from "next";
 import {Inter, JetBrains_Mono} from "next/font/google";
-import "./globals.css";
 import Overlay from "@/components/Overlay";
 import {OverlayProvider} from "@/providers/OverlayProvider";
 import {ThemeModeProvider} from "@/providers/ThemeModeProvider";
+
+import "@/styles/globals.css";
+import "@/styles/animations.css";
 
 const jetBrainsMono = JetBrains_Mono({
     variable: "--font-jetbrains-mono",

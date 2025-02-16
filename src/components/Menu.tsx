@@ -35,6 +35,12 @@ const Menu = () => {
         setMounted(true)
     }, [])
 
+    const buttonToggleThemeRotateVariant = {
+        initial: {rotateY: 120},
+        animate: {rotateY: 0},
+        transition: {duration: 0.2, ease: "easeInOut"}
+    }
+
     return (<>
         <header
             className="fixed shadow-sm w-screen top-0 flex justify-between lg:justify-start items-center py-2 px-6 h-16 bg-background z-10">
@@ -92,7 +98,12 @@ const Menu = () => {
                 data-tooltip-content="Alterar tema"
                 onClick={() => toggleTheme()}
                 className="lg:ml-14 max-md:hidden p-2 rounded-lg hover:bg-foreground-primary hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary">
-                {resolvedTheme === 'dark' ? <SunMedium strokeWidth={1.7}/> : <Moon strokeWidth={1.5}/>}
+                <motion.span
+                    key={resolvedTheme}
+                    {...buttonToggleThemeRotateVariant}
+                    className="block">
+                    {resolvedTheme === 'dark' ? <SunMedium strokeWidth={1.7}/> : <Moon strokeWidth={1.5}/>}
+                </motion.span>
                 <span className="sr-only">Alterar tema</span>
                 <Tooltip
                     id="toggle-theme-tooltip"
@@ -169,7 +180,12 @@ const Menu = () => {
                 <button
                     onClick={() => toggleTheme()}
                     className="fixed bottom-4 right-4 p-2 rounded-lg hover:bg-foreground-primary hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary">
-                    {resolvedTheme === 'dark' ? <SunMedium strokeWidth={1.7}/> : <Moon strokeWidth={1.5}/>}
+                    <motion.span
+                        key={resolvedTheme}
+                        {...buttonToggleThemeRotateVariant}
+                        className="block">
+                        {resolvedTheme === 'dark' ? <SunMedium strokeWidth={1.7}/> : <Moon strokeWidth={1.5}/>}
+                    </motion.span>
                     <span className="sr-only">Alterar tema</span>
                 </button>
             </motion.div>)}
