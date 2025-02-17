@@ -5,8 +5,9 @@ import {ChevronRight, MenuIcon, Moon, SunMedium} from "lucide-react";
 import {useEffect, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 import {useOverlay} from "@/contexts/OverlayContext";
-import {Tooltip} from "react-tooltip";
 import {useTheme} from "next-themes";
+import {useSound} from "@/contexts/SoundContext";
+import {Tooltip} from "react-tooltip";
 
 import AndroidIcon from "@/assets/elements/android-logo.svg";
 
@@ -16,21 +17,7 @@ const Menu = () => {
 
     const {setTheme, resolvedTheme} = useTheme();
     const {showOverlay, hideOverlay} = useOverlay()
-
-    const openSound = new Howl({
-        src: ["/sounds/open.mp3"],
-        volume: 0.8,
-        preload: true
-    })
-    const switchSound = new Howl({
-        src: ["/sounds/switch-on.mp3"],
-        preload: true
-    })
-    const swishSound = new Howl({
-        src: ["/sounds/swish.mp3"],
-        preload: true,
-        volume: 0.4,
-    })
+    const {openSound, switchSound, swishSound} = useSound()
 
     const toggleMenu = () => {
         if (!isMenuOpen) {
@@ -50,7 +37,7 @@ const Menu = () => {
         const hash = window.location.hash;
 
         if (hash !== toHash) {
-            swishSound.play()
+            swishSound?.play()
         }
     }
 
@@ -126,7 +113,7 @@ const Menu = () => {
                 data-tooltip-content="Alterar tema"
                 onClick={() => {
                     toggleTheme()
-                    switchSound.play()
+                    switchSound?.play()
                 }}
                 className="lg:ml-14 max-md:hidden p-2 rounded-lg hover:bg-foreground-primary hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary">
                 <motion.span
@@ -154,7 +141,7 @@ const Menu = () => {
                 className="md:hidden p-2 rounded-lg hover:bg-foreground-primary transition-all ease-in-out duration-350 hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary"
                 onClick={() => {
                     toggleMenu()
-                    openSound.play()
+                    openSound?.play()
                 }}>
                 <MenuIcon/>
                 <span className="sr-only">Abrir menu</span>
@@ -171,7 +158,7 @@ const Menu = () => {
                     className="p-2 rounded-lg hover:bg-foreground-primary transition-all ease-in-out duration-350 focus:text-primary-blue dark:focus:text-font-primary hover:text-primary-blue dark:hover:text-font-primary"
                     onClick={() => {
                         toggleMenu()
-                        openSound.play()
+                        openSound?.play()
                     }}>
                     <ChevronRight/>
                     <span className="sr-only">Fechar menu</span>
@@ -217,7 +204,7 @@ const Menu = () => {
                 <button
                     onClick={() => {
                         toggleTheme()
-                        switchSound.play()
+                        switchSound?.play()
                     }}
                     className="fixed bottom-4 right-4 p-2 rounded-lg hover:bg-foreground-primary hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary">
                     <motion.span

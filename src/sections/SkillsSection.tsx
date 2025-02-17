@@ -32,8 +32,8 @@ export default function SkillsSection() {
                             >
                                 <Image data-tooltip-id={`skill-${skill.name}-tooltip`}
                                        data-tooltip-content={skill.name}
-                                       width={64}
-                                       height={0}
+                                       width={128}
+                                       height={128}
                                        src={
                                            skill.iconPath.dark && resolvedTheme === "dark" ? skill.iconPath.dark : skill.iconPath.normal
                                        }
@@ -72,8 +72,8 @@ export default function SkillsSection() {
                                 {...scaleIn(index * 0.1, 0.8)}>
                                 <Image data-tooltip-id={`skill-${skill.name}-tooltip`}
                                        data-tooltip-content={skill.name}
-                                       width={64}
-                                       height={64}
+                                       width={128}
+                                       height={128}
                                        src={
                                            skill.iconPath.dark && resolvedTheme === "dark" ? skill.iconPath.dark : skill.iconPath.normal
                                        }

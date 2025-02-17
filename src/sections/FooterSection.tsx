@@ -12,17 +12,10 @@ import {fadeInLeft, fadeInRight} from "@/animations/scrollAnimations";
 import TopWave from "@/assets/elements/TopWave";
 import GithubIcon from "@/assets/icons/GithubIcon";
 import LinkedInIcon from "@/assets/icons/LinkedInIcon";
-import { Howl } from "howler";
+import {useSound} from "@/contexts/SoundContext";
 
 export default function FooterSection() {
-    const slimeLandSound = new Howl({
-        src: ["/sounds/slime-land.mp3"],
-        volume: 0.5
-    })
-    const slimeDeathSound = new Howl({
-        src: ["/sounds/slime-death.mp3"],
-        volume: 1
-    })
+    const {slimeLandSound, slimeDeathSound} = useSound()
 
     return (
         <footer>
@@ -46,7 +39,7 @@ export default function FooterSection() {
                     </motion.form>
                     <motion.div {...fadeInRight(20, 0.3, 1)} className="flex md:flex flex-col items-center">
                         <Image
-                            onMouseEnter={() => slimeDeathSound.play()}
+                            onMouseEnter={() => slimeDeathSound?.play()}
                             src={AndroidEmail}
                             alt="Imagem de envelopes que representam um e-mail com o tema, cores, e o icone do android."
                             className="w-auto hover:animate-gelatine cursor-pointer"/>
@@ -80,7 +73,7 @@ export default function FooterSection() {
                     <div className="flex gap-2 fill-font-color">
                         <a data-tooltip-id="footer-socialmedia-link-tooltip"
                            data-tooltip-content="Github"
-                           onMouseEnter={() => slimeLandSound.play()}
+                           onMouseEnter={() => slimeLandSound?.play()}
                            href="https://github.com/luizlealdev"
                            target="_blank">
                             <GithubIcon
@@ -88,13 +81,13 @@ export default function FooterSection() {
                         </a>
                         <a data-tooltip-id="footer-socialmedia-link-tooltip"
                            data-tooltip-content="Instagram"
-                           onMouseEnter={() => slimeLandSound.play()}
+                           onMouseEnter={() => slimeLandSound?.play()}
                            href="https://github.com/luizlealdev" target="_blank" className="hover:animate-gelatine">
                             <InstagramIcon className="hover:text-primary-blue dark:hover:text-font-primary w-5"/>
                         </a>
                         <a data-tooltip-id="footer-socialmedia-link-tooltip"
                            data-tooltip-content="LinkedIn"
-                           onMouseEnter={() => slimeLandSound.play()}
+                           onMouseEnter={() => slimeLandSound?.play()}
                            href="https://github.com/luizlealdev" target="_blank">
                             <LinkedInIcon
                                 className="hover:animate-gelatine fill-font-color hover:fill-primary-blue dark:hover:fill-font-primary w-6"/>
@@ -108,7 +101,6 @@ export default function FooterSection() {
                                 padding: "5px 10px",
                                 borderRadius: "6px"
                             }}
-                            delayShow={300}
                             place="top"
                         />
 
