@@ -17,6 +17,21 @@ const Menu = () => {
     const {setTheme, resolvedTheme} = useTheme();
     const {showOverlay, hideOverlay} = useOverlay()
 
+    const openSound = new Howl({
+        src: ["/sounds/open.mp3"],
+        volume: 0.8,
+        preload: true
+    })
+    const switchSound = new Howl({
+        src: ["/sounds/switch-on.mp3"],
+        preload: true
+    })
+    const swishSound = new Howl({
+        src: ["/sounds/swish.mp3"],
+        preload: true,
+        volume: 0.4,
+    })
+
     const toggleMenu = () => {
         if (!isMenuOpen) {
             showOverlay()
@@ -29,6 +44,14 @@ const Menu = () => {
 
     const toggleTheme = () => {
         setTheme(resolvedTheme === "dark" ? "light" : "dark");
+    }
+
+    const playSwishSound = (toHash: string) => {
+        const hash = window.location.hash;
+
+        if (hash !== toHash) {
+            swishSound.play()
+        }
     }
 
     useEffect(() => {
@@ -59,12 +82,14 @@ const Menu = () => {
                 <ul className="flex md:gap-5 lg:gap-6">
                     <li>
                         <a href="#"
+                           onClick={() => playSwishSound("")}
                            className="hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary transition-all duration-200 p-2">
                             Início
                         </a>
                     </li>
                     <li>
                         <a href="#about"
+                           onClick={() => playSwishSound("#about")}
                            className="hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary transition-all duration-200 p-2">
                             Sobre
                         </a>
@@ -72,6 +97,7 @@ const Menu = () => {
                     <li>
                         <a
                             href="#projects"
+                            onClick={() => playSwishSound("#projects")}
                             className="hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary transition-all duration-200 p-2"
                         >
                             Projetos
@@ -79,12 +105,14 @@ const Menu = () => {
                     </li>
                     <li>
                         <a href="#skills"
+                           onClick={() => playSwishSound("#skills")}
                            className="hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary transition-all duration-200 p-2">
                             Tecnologias
                         </a>
                     </li>
                     <li>
                         <a href="#contact"
+                           onClick={() => playSwishSound("#contact")}
                            className="hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary transition-all duration-200 p-2">
                             Contato
                         </a>
@@ -96,7 +124,10 @@ const Menu = () => {
             <button
                 data-tooltip-id="toggle-theme-tooltip"
                 data-tooltip-content="Alterar tema"
-                onClick={() => toggleTheme()}
+                onClick={() => {
+                    toggleTheme()
+                    switchSound.play()
+                }}
                 className="lg:ml-14 max-md:hidden p-2 rounded-lg hover:bg-foreground-primary hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary">
                 <motion.span
                     key={resolvedTheme}
@@ -121,7 +152,10 @@ const Menu = () => {
 
             <button
                 className="md:hidden p-2 rounded-lg hover:bg-foreground-primary transition-all ease-in-out duration-350 hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary"
-                onClick={() => toggleMenu()}>
+                onClick={() => {
+                    toggleMenu()
+                    openSound.play()
+                }}>
                 <MenuIcon/>
                 <span className="sr-only">Abrir menu</span>
             </button>
@@ -135,7 +169,10 @@ const Menu = () => {
                                         className="fixed top-0 right-0 h-screen w-9/12 bg-background p-4 z-50">
                 <button
                     className="p-2 rounded-lg hover:bg-foreground-primary transition-all ease-in-out duration-350 focus:text-primary-blue dark:focus:text-font-primary hover:text-primary-blue dark:hover:text-font-primary"
-                    onClick={() => toggleMenu()}>
+                    onClick={() => {
+                        toggleMenu()
+                        openSound.play()
+                    }}>
                     <ChevronRight/>
                     <span className="sr-only">Fechar menu</span>
                 </button>
@@ -178,7 +215,10 @@ const Menu = () => {
                 </nav>
 
                 <button
-                    onClick={() => toggleTheme()}
+                    onClick={() => {
+                        toggleTheme()
+                        switchSound.play()
+                    }}
                     className="fixed bottom-4 right-4 p-2 rounded-lg hover:bg-foreground-primary hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary">
                     <motion.span
                         key={resolvedTheme}

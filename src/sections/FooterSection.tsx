@@ -12,8 +12,18 @@ import {fadeInLeft, fadeInRight} from "@/animations/scrollAnimations";
 import TopWave from "@/assets/elements/TopWave";
 import GithubIcon from "@/assets/icons/GithubIcon";
 import LinkedInIcon from "@/assets/icons/LinkedInIcon";
+import { Howl } from "howler";
 
 export default function FooterSection() {
+    const slimeLandSound = new Howl({
+        src: ["/sounds/slime-land.mp3"],
+        volume: 0.5
+    })
+    const slimeDeathSound = new Howl({
+        src: ["/sounds/slime-death.mp3"],
+        volume: 1
+    })
+
     return (
         <footer>
             <TopWave className="fill-foreground-primary pointer-events-none select-none"/>
@@ -35,9 +45,11 @@ export default function FooterSection() {
                         </div>
                     </motion.form>
                     <motion.div {...fadeInRight(20, 0.3, 1)} className="flex md:flex flex-col items-center">
-                        <Image src={AndroidEmail}
-                               alt="Imagem de envelopes que representam um e-mail com o tema, cores, e o icone do android."
-                               className="w-auto hover:animate-gelatine cursor-pointer"/>
+                        <Image
+                            onMouseEnter={() => slimeDeathSound.play()}
+                            src={AndroidEmail}
+                            alt="Imagem de envelopes que representam um e-mail com o tema, cores, e o icone do android."
+                            className="w-auto hover:animate-gelatine cursor-pointer"/>
                         <a data-tooltip-id="open-email-tooltip" data-tooltip-content="Enviar e-mail"
                            href="mailto:contato@luizleal.dev" target="_blank"
                            className="hidden md:flex gap-2 transition-all duration-200 hover:text-primary-blue dark:hover:text-font-primary">
@@ -59,7 +71,8 @@ export default function FooterSection() {
                     </motion.div>
                 </div>
                 <div className="h-px w-full bg-foreground-secondary"></div>
-                <div className="max-w-6xl mx-auto p-6 flex gap-4 max-[400px]:items-center max-[400px]:flex-col justify-between">
+                <div
+                    className="max-w-6xl mx-auto p-6 flex gap-4 max-[400px]:items-center max-[400px]:flex-col justify-between">
                     <p>
                         <span className="font-inter"> &#169; </span>
                         Luiz André Leal · 2025
@@ -67,6 +80,7 @@ export default function FooterSection() {
                     <div className="flex gap-2 fill-font-color">
                         <a data-tooltip-id="footer-socialmedia-link-tooltip"
                            data-tooltip-content="Github"
+                           onMouseEnter={() => slimeLandSound.play()}
                            href="https://github.com/luizlealdev"
                            target="_blank">
                             <GithubIcon
@@ -74,13 +88,16 @@ export default function FooterSection() {
                         </a>
                         <a data-tooltip-id="footer-socialmedia-link-tooltip"
                            data-tooltip-content="Instagram"
+                           onMouseEnter={() => slimeLandSound.play()}
                            href="https://github.com/luizlealdev" target="_blank" className="hover:animate-gelatine">
                             <InstagramIcon className="hover:text-primary-blue dark:hover:text-font-primary w-5"/>
                         </a>
                         <a data-tooltip-id="footer-socialmedia-link-tooltip"
                            data-tooltip-content="LinkedIn"
+                           onMouseEnter={() => slimeLandSound.play()}
                            href="https://github.com/luizlealdev" target="_blank">
-                            <LinkedInIcon className="hover:animate-gelatine fill-font-color hover:fill-primary-blue dark:hover:fill-font-primary w-6"/>
+                            <LinkedInIcon
+                                className="hover:animate-gelatine fill-font-color hover:fill-primary-blue dark:hover:fill-font-primary w-6"/>
                         </a>
 
                         <Tooltip
@@ -94,6 +111,7 @@ export default function FooterSection() {
                             delayShow={300}
                             place="top"
                         />
+
                     </div>
                 </div>
             </div>
