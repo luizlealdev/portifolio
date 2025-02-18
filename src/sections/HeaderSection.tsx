@@ -11,7 +11,8 @@ import {fadeInUp} from "@/animations/scrollAnimations";
 export default function HeaderSection() {
     return (
         <section
-            className="max-w-6xl h-screen max-md:mt-24 mx-auto flex flex-col md:flex-row gap-6 md:gap-10 lg:gap-24 items-center px-6">
+            className="max-w-6xl h-screen max-md:mt-24 mx-auto flex flex-col md:flex-row gap-6 md:gap-10 lg:gap-24 items-center px-6"
+            id="home">
             <motion.div {...fadeInUp(20, 0, 1, "some")} className="space-y-2 md:space-y-3">
                 <p className="text-primary-green-light h-5">
                     <Typewriter words={["Olá, me chamo"]} loop={true} cursor={true}/>
