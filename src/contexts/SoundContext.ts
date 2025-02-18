@@ -7,12 +7,14 @@ export const SoundContext = createContext<{
     swishSound: Howl | null,
     slimeLandSound: Howl | null,
     slimeDeathSound: Howl | null,
+    bubbleSound: Howl | null,
 }>({
     openSound: null,
     swishSound: null,
     switchSound: null,
     slimeDeathSound: null,
-    slimeLandSound: null
+    slimeLandSound: null,
+    bubbleSound: null
 })
 
 export const useSound = () => useContext(SoundContext)
