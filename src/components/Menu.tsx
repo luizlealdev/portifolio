@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
-import { ChevronRight, MenuIcon, Moon, SunMedium } from "lucide-react";
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import { useOverlay } from "@/contexts/OverlayContext";
-import { useTheme } from "next-themes";
 import { useSound } from "@/contexts/SoundContext";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronRight, MenuIcon, Moon, SunMedium } from "lucide-react";
+import { useTheme } from "next-themes";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Tooltip } from "react-tooltip";
 
 import AndroidIcon from "@/assets/elements/android-logo.svg";
@@ -36,12 +36,15 @@ const Menu = () => {
         setTheme(resolvedTheme === "dark" ? "light" : "dark");
     };
 
-    const playSwishSound = (toHash: string) => {
+    const handleLinkClick = (goToHash: string) => {
         const hash = window.location.hash;
 
-        if (hash !== toHash) {
+        if (hash !== goToHash) {
             swishSound?.play();
         }
+
+        setIsMenuOpen(false);
+        hideOverlay();
     };
 
     useEffect(() => {
@@ -89,12 +92,12 @@ const Menu = () => {
                     />
                 </a>
 
-                <nav className="flex items-center max-md:hidden lg:ml-auto">
+                <nav className="flex max-md:hidden lg:ml-auto">
                     <ul className="flex md:gap-5 lg:gap-6">
                         <li>
                             <a
                                 href="#home"
-                                onClick={() => playSwishSound("")}
+                                onClick={() => handleLinkClick("#home" || "")}
                                 className={`hover:text-primary-blue dark:hover:text-font-primary transition-all duration-200 p-2 ${
                                     activeSection === "home" ||
                                     activeSection.length === 0
@@ -108,7 +111,7 @@ const Menu = () => {
                         <li>
                             <a
                                 href="#about"
-                                onClick={() => playSwishSound("#about")}
+                                onClick={() => handleLinkClick("#about")}
                                 className={`hover:text-primary-blue dark:hover:text-font-primary transition-all duration-200 p-2 ${
                                     activeSection === "about"
                                         ? "text-primary-blue dark:text-font-primary"
@@ -121,7 +124,7 @@ const Menu = () => {
                         <li>
                             <a
                                 href="#projects"
-                                onClick={() => playSwishSound("#projects")}
+                                onClick={() => handleLinkClick("#projects")}
                                 className={`hover:text-primary-blue dark:hover:text-font-primary transition-all duration-200 p-2 ${
                                     activeSection === "projects"
                                         ? "text-primary-blue dark:text-font-primary"
@@ -134,7 +137,7 @@ const Menu = () => {
                         <li>
                             <a
                                 href="#skills"
-                                onClick={() => playSwishSound("#skills")}
+                                onClick={() => handleLinkClick("#skills")}
                                 className={`hover:text-primary-blue dark:hover:text-font-primary transition-all duration-200 p-2 ${
                                     activeSection === "skills"
                                         ? "text-primary-blue dark:text-font-primary"
@@ -147,7 +150,7 @@ const Menu = () => {
                         <li>
                             <a
                                 href="#contact"
-                                onClick={() => playSwishSound("#contact")}
+                                onClick={() => handleLinkClick("#contact")}
                                 className={`hover:text-primary-blue dark:hover:text-font-primary transition-all duration-200 p-2 ${
                                     activeSection === "contact"
                                         ? "text-primary-blue dark:text-font-primary"
@@ -235,6 +238,9 @@ const Menu = () => {
                                 <li>
                                     <a
                                         href="#home"
+                                        onClick={() =>
+                                            handleLinkClick("#skills")
+                                        }
                                         className={`hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary transition-all duration-200 p-2 ${
                                             activeSection === "home"
                                                 ? "text-primary-blue dark:text-font-primary"
@@ -247,6 +253,9 @@ const Menu = () => {
                                 <li>
                                     <a
                                         href="#about"
+                                        onClick={() =>
+                                            handleLinkClick("#about")
+                                        }
                                         className={`hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary transition-all duration-200 p-2 ${
                                             activeSection === "about"
                                                 ? "text-primary-blue dark:text-font-primary"
@@ -259,6 +268,9 @@ const Menu = () => {
                                 <li>
                                     <a
                                         href="#projects"
+                                        onClick={() =>
+                                            handleLinkClick("#projects")
+                                        }
                                         className={`hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary transition-all duration-200 p-2 ${
                                             activeSection === "projects"
                                                 ? "text-primary-blue dark:text-font-primary"
@@ -271,6 +283,9 @@ const Menu = () => {
                                 <li>
                                     <a
                                         href="#skills"
+                                        onClick={() =>
+                                            handleLinkClick("#skills")
+                                        }
                                         className={`hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary transition-all duration-200 p-2 ${
                                             activeSection === "skills"
                                                 ? "text-primary-blue dark:text-font-primary"
@@ -283,6 +298,9 @@ const Menu = () => {
                                 <li>
                                     <a
                                         href="#contact"
+                                        onClick={() =>
+                                            handleLinkClick("#contact")
+                                        }
                                         className={`hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary transition-all duration-200 p-2 ${
                                             activeSection === "contact"
                                                 ? "text-primary-blue dark:text-font-primary"

@@ -11,7 +11,7 @@ import {fadeInUp} from "@/animations/scrollAnimations";
 export default function HeaderSection() {
     return (
         <section
-            className="max-w-6xl h-screen max-md:mt-24 mx-auto flex flex-col md:flex-row gap-6 md:gap-10 lg:gap-24 items-center px-6"
+            className="max-w-6xl h-screen max-md:pt-24 max-md:mb-8 mx-auto flex flex-col md:flex-row gap-6 md:gap-10 lg:gap-24 items-center px-6"
             id="home">
             <motion.div {...fadeInUp(20, 0, 1, "some")} className="space-y-2 md:space-y-3">
                 <p className="text-primary-green-light h-5">
@@ -36,7 +36,7 @@ export default function HeaderSection() {
                         src={AndroidComponents}
                         alt="Imagem de um laptop com a logo e as cores do android."
                         layout="responsive"
-                        className="w-full h-auto drop-shadow-sm animate-moving"
+                        className="w-full h-auto drop-shadow-md animate-moving"
                     />
                 </div>
             </motion.div>
