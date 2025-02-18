@@ -115,10 +115,24 @@
       }
     },
     {
+      "name": "TailwindCSS",
+      "iconPath": {
+        "normal": "/skills-icons/tailwindcss-icon.png",
+        "dark": null
+      }
+    },
+    {
       "name": "NextJS",
       "iconPath": {
         "normal": "/skills-icons/nextjs-icon.png",
         "dark": "/skills-icons/nextjs-icon-dark.png"
+      }
+    },
+    {
+      "name": "Prisma",
+      "iconPath": {
+        "normal": "/skills-icons/prisma-icon.png",
+        "dark": "/skills-icons/prisma-icon-dark.png"
       }
     },
     {
