@@ -6,6 +6,7 @@ import {ThemeModeProvider} from "@/providers/ThemeModeProvider";
 
 import "@/styles/globals.css";
 import "@/styles/animations.css";
+import {SoundProvider} from "@/providers/SoundProvider";
 
 const jetBrainsMono = JetBrains_Mono({
     variable: "--font-jetbrains-mono",
@@ -35,10 +36,12 @@ export default function RootLayout({
         >
 
         <ThemeModeProvider>
-            <OverlayProvider>
-                {children}
-                <Overlay/>
-            </OverlayProvider>
+            <SoundProvider>
+                <OverlayProvider>
+                    {children}
+                    <Overlay/>
+                </OverlayProvider>
+            </SoundProvider>
         </ThemeModeProvider>
         </body>
         </html>

@@ -8,17 +8,17 @@ import SkillsSection from "@/sections/SkillsSection";
 export default function Home() {
     return (
         <>
-            <Menu/>
+            <Menu />
 
             <HeaderSection />
 
-            <AboutSection/>
+            <AboutSection />
 
-            <ProjectsSection/>
+            <ProjectsSection />
 
-            <SkillsSection/>
+            <SkillsSection />
 
             <FooterSection />
         </>
     );
-};
+}

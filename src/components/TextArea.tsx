@@ -28,7 +28,7 @@ const TextArea: FC<TextAreaProps> = ({
                 onChange={onChange}
                 maxLength={maxLength}
                 required={required}
-                name={`textarea-${name}`}
+                name={name}
                 id={`textarea-${name}`}
                 className="bg-[#dbe2fb]/5 dark:bg-[#06284A]/5 border-[#dbe2fb]/55 dark:border-[#06284A]/55 text-font-primary border-2 block w-full rounded-lg p-3 focus:border-primary-blue outline-none h-52 max-h-52"
             />

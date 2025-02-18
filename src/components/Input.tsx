@@ -19,11 +19,16 @@ const Input: FC<InputProps> = ({
     name,
     placeholder,
     onChange,
-    maxLength = 50
+    maxLength = 50,
 }) => {
     return (
         <div className="flex flex-col gap-1">
-            <label htmlFor={`input-${name}`} className="block text-sm font-medium">{label}</label>
+            <label
+                htmlFor={`input-${name}`}
+                className="block text-sm font-medium"
+            >
+                {label}
+            </label>
             <input
                 type={type}
                 value={value}
@@ -31,9 +36,9 @@ const Input: FC<InputProps> = ({
                 onChange={onChange}
                 maxLength={maxLength}
                 required={required}
-                name={`input-${name}`}
+                name={name}
                 id={`input-${name}`}
-                className="bg-[#dbe2fb]/5 dark:bg-[#06284A]/5 border-2  border-[#dbe2fb]/55 dark:border-[#06284A]/55 text-font-primary block w-full rounded-lg p-3 focus:border-primary-blue outline-none"
+                className="bg-[#dbe2fb]/5 dark:bg-[#06284A]/5 border-2  border-[#dbe2fb]/55 dark:border-[#06284A]/80 text-font-primary block w-full rounded-lg p-3 focus:border-primary-blue outline-none"
             />
         </div>
     );
