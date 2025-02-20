@@ -220,10 +220,10 @@ const Menu = () => {
                             duration: 0.25,
                             ease: "easeInOut",
                         }}
-                        className="fixed top-0 right-0 h-screen w-9/12 bg-background flex flex-col p-4 z-50"
+                        className="fixed top-0 right-0 h-screen w-9/12 bg-background p-4 z-50"
                     >
                         <button
-                            className="p-2 mr-auto rounded-lg hover:bg-foreground-primary transition-all ease-in-out duration-350 focus:text-primary-blue dark:focus:text-font-primary hover:text-primary-blue dark:hover:text-font-primary"
+                            className="p-2 rounded-lg hover:bg-foreground-primary transition-all ease-in-out duration-350 focus:text-primary-blue dark:focus:text-font-primary hover:text-primary-blue dark:hover:text-font-primary"
                             onClick={() => {
                                 toggleMenu();
                                 openSound?.play();
@@ -318,7 +318,7 @@ const Menu = () => {
                                 toggleTheme();
                                 switchSound?.play();
                             }}
-                            className="ml-auto p-2 rounded-lg hover:bg-foreground-primary hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary"
+                            className="fixed bottom-4 right-4 p-2 rounded-lg hover:bg-foreground-primary hover:text-primary-blue focus:text-primary-blue dark:focus:text-font-primary dark:hover:text-font-primary"
                         >
                             <motion.span
                                 key={resolvedTheme}
