@@ -37,7 +37,7 @@ export const metadata: Metadata = {
         locale: "pt_BR",
         images: [
             {
-                url: "https://www.luizleal.dev/image-preview.jpg",
+                url: "https://www.luizleal.dev/image-preview.png",
                 width: 1200,
                 height: 630,
                 alt: "Luiz Leal - Portfólio",
