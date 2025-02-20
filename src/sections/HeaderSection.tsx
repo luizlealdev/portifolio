@@ -32,10 +32,17 @@ export default function HeaderSection() {
                     Desenvolvedor de apps Android nativo, programo para web
                     quando não tem jeito, e às vezes me aventuro como designer.
                 </article>
-                <Button className="flex gap-2">
-                    <Download strokeWidth={1.9} className="w-5" />
-                    Download currículo
-                </Button>
+                <div>
+                    <a
+                        href="https://bit.ly/curriculo-luiz-leal"
+                        target="_blank"
+                    >
+                        <Button className="flex gap-2">
+                            <Download strokeWidth={1.9} className="w-5" />
+                            Baixar currículo
+                        </Button>
+                    </a>
+                </div>
             </motion.div>
             <motion.div
                 {...fadeInUp(20, 0.3, 1, "some")}

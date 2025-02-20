@@ -13,7 +13,7 @@ import { useForm } from "@formspree/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { InstagramIcon, Mail } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Tooltip } from "react-tooltip";
 
 export default function FooterSection() {
@@ -32,7 +32,7 @@ export default function FooterSection() {
     const [clientEmail, setClientEmail] = useState("");
     const [message, setMessage] = useState("");
 
-    const [state, handleSubmit] = useForm("xjkgjvja");
+    const [state, handleSubmit] = useForm("movjyqnv");
 
     const { slimeLandSound, slimeDeathSound, bubbleSound } = useSound();
 
@@ -42,15 +42,6 @@ export default function FooterSection() {
 
         try {
             await handleSubmit(e);
-
-            if (state.succeeded) {
-                setShowToast(true);
-                bubbleSound?.play();
-
-                setClientName("");
-                setClientEmail("");
-                setMessage("");
-            }
         } catch (error) {
             console.error("Error:", error);
         } finally {
@@ -61,6 +52,22 @@ export default function FooterSection() {
             }, 8000)
         }
     };
+
+    useEffect(() => {
+        if (state.succeeded) {
+            setShowToast(true);
+            bubbleSound?.play();
+    
+            setClientName("");
+            setClientEmail("");
+            setMessage("");
+    
+            setTimeout(() => {
+                setShowToast(false);
+            }, 8000);
+        }
+    }, [state.succeeded]);
+    
 
     return (
         <>
